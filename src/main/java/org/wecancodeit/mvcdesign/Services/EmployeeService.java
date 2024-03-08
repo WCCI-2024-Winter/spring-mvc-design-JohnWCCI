@@ -31,4 +31,14 @@ public class EmployeeService {
         }
         return null;
     }
+
+    public EmployeeModel getEmployee(long id){
+        EmployeeModel result = null;
+        result = employeeRepository.findById(id).get();
+        return result;
+    }
+    public void deleteEmployee(long id){
+        employeeRepository.deleteById(id);
+    }
+
 }

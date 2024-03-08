@@ -29,12 +29,19 @@ public class Populator implements CommandLineRunner {
          EmployeeModel employeeModel = new EmployeeModel("John", "R.", "Moseley", "Mr.", "1234567890");
          employeeModel.setAddress(addressModel);
          employees.saveModel(employeeModel);
+
+
+         employeeModel = new EmployeeModel("Joe", "R.", "Smith", "Mr.", "1234567890");
          addressModel = new AddressModel("Second Address.", "Address 2", "B-12", "AnyCity", "State", "44422",
          "44422-456", "Dummy", "USA");
-         address.saveModel(addressModel);
+        employeeModel.setAddress(addressModel);
+         employees.saveModel(employeeModel);
+         
+         employeeModel = new EmployeeModel("Jane", "R.", "Smith", "Mr.", "1234567890");
          addressModel = new AddressModel("Thrid Address.", "Address 2", "B-12", "AnyCity", "State", "44422",
          "44422-456", "Dummy", "USA");
-         address.saveModel(addressModel);
+         employeeModel.setAddress(addressModel);
+         employees.saveModel(employeeModel);
     }
 
 }
