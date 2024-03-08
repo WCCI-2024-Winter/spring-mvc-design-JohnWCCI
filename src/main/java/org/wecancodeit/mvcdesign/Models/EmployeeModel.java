@@ -17,22 +17,36 @@ public class EmployeeModel {
     private String middle;
     private String last;
     private String suffixe;
+    private String phoneNumber;
    
+    
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @JoinColumn(name = "addressId", referencedColumnName = "id")
     private AddressModel address;
 
     public EmployeeModel() {
     }
 
-    public EmployeeModel(String first, String middle, String last, String suffixe) {
+    public EmployeeModel(String first, String middle, String last, String suffixe, String phoneNumber) {
         this.first = first;
         this.middle = middle;
         this.last = last;
         this.suffixe = suffixe;
+        this.phoneNumber = phoneNumber;
+       
     }
 
-    
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public AddressModel getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressModel address) {
+        this.address = address;
+    }
     public void setId(Long id) {
         this.id = id;
     }
@@ -61,7 +75,5 @@ public class EmployeeModel {
     public String toString() {
         return "EmployeeModel [id=" + id + ", first=" + first + ", middle=" + middle + ", last=" + last + ", suffixe="
                 + suffixe + "]";
-    }
-
-    
+    }    
 }
